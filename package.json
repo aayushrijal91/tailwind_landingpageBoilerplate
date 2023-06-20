@@ -1,0 +1,30 @@
+{
+  "name": "tailwind_landingpage",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aayush Rijal",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.4.14",
+    "cssnano": "^6.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "postcss": "^8.4.24",
+    "sass": "^1.63.4",
+    "tailwindcss": "^3.3.2"
+  },
+  "dependencies": {
+    "aos": "^2.3.4",
+    "browser-sync": "^2.29.3",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-imagemin": "^6.0.0",
+    "gulp-terser": "^2.1.0",
+    "jquery": "^3.7.0",
+    "slick-carousel": "^1.8.1"
+  }
+}
