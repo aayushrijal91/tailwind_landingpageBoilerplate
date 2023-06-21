@@ -1,4 +1,4 @@
-# Landing page [Boilerplate](www.aiims.com.au)
+# Landing page [Boilerplate](https://www.aiims.com.au)
 
 This is a landing page boilerplate that uses PHP scripting language
 
@@ -9,13 +9,14 @@ Developer: [Aayush Rijal](https://www.aayushrijal.net)
 Contact: 0452637371
 
 [Github]()
+
 [Figma]()
 
 ## _Instruction_
 
 ```bash
  npm install
- npm start
+ gulp watch
  ```
 
 Reference for full repository
