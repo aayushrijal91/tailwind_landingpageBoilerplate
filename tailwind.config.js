@@ -5,7 +5,18 @@ module.exports = {
     container: {
       center: true,
     },
-    extend: {},
+    extend: {
+      colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
+        'primary': '#5687ca',
+        'secondary': '#acce31'
+      },
+      fontFamily: {
+        raleway: ['Raleway', 'sans-serif'],
+        faktum: ['Faktum', 'sans-serif'],
+      }
+    },
   },
   plugins: [],
 }
