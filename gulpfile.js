@@ -48,13 +48,10 @@ function watchTask() {
         proxy: encodeURI(`localhost/landing_pages/${path.resolve(__dirname, './').split(path.sep).pop()}/app`),
         injectChanges: true,
     });
-    gulp.watch("./scss/**/*.scss", style);
+    gulp.watch(["./scss/**/*.scss", "./app/**/*.php"], style);
     gulp.watch('./scripts/**/*.js', scripts);
     gulp.watch("./images/**/*", imgSquash);
-    gulp.watch("./scss/**/*.scss").on('change', browserSync.reload);;
-    gulp.watch('./app/**/*.php', style);
-    gulp.watch('./app/**/*.php').on('change', browserSync.reload);
-    gulp.watch("./app/assets/js/**/*.js").on('change', browserSync.reload);
+    gulp.watch(["./app/assets/css/**/*.css", "./app/**/*.php", "./app/assets/js/**/*.js"]).on('change', browserSync.reload);;
 }
 
 exports.watch = watchTask;

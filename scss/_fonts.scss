@@ -15,7 +15,3 @@ $asset-path: "../fonts/";
 
 @include font-face("Faktum", "Faktum Test Regular", 400);
 @include font-face("Faktum", "Faktum Test Bold", 700);
-
-body {
-    @apply font-faktum
-}

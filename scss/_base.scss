@@ -7,71 +7,26 @@ img {
 }
 
 body {
-    overflow-x: hidden;
-    margin: 0;
-    padding: 0;
+    @apply font-baukasten p-0 m-0 overflow-x-hidden;
 }
 
-.btn {
-    height: 48px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.125rem;
-    line-height: 1;
-    font-weight: 700;
+.container {
+    max-width: 1300px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
 
-    @media screen and (max-width: 540px) {
-        font-size: 0.875rem;
-    }
+.boldBtn {
+    @apply h-[50px] md:h-[60px] inline-flex items-center justify-center bg-primary rounded-full px-6 text-white font-poppins font-medium text-lg md:text-xl;
+}
 
-    &:focus {
-        box-shadow: none;
-        outline: 0;
-    }
+.borderBtn {
+    @apply h-[50px] md:h-[60px] inline-flex items-center justify-center border-2 rounded-full px-6 font-poppins font-medium text-lg md:text-xl;
 }
 
 //Go To Top
 #return-to-top {
-    position: fixed;
-    bottom: 95px;
-    right: 55px;
-    z-index: 9;
-    background: #ccc;
-    box-shadow: 0 0 14px 4px rgba(0, 0, 0, 0.3);
-    width: 50px;
-    height: 50px;
-    display: block;
-    text-decoration: none;
-    -webkit-border-radius: 35px;
-    -moz-border-radius: 35px;
-    border-radius: 35px;
-    display: none;
-    -webkit-transition: all 0.3s linear;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-#return-to-top img {
-    margin: 0;
-    position: relative;
-    left: 13px;
-    top: 10px;
-    -webkit-transition: all 0.3s ease;
-    -moz-transition: all 0.3s ease;
-    -ms-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-#return-to-top:hover {
-    background: rgba(0, 0, 0, 0.9);
-}
-
-#return-to-top:hover img {
-    top: 4px;
+    @apply bg-grey hover:bg-dark w-[50px] h-[50px] right-[55px] bottom-[95px] rounded-full transition-all duration-100 ease-linear fixed hidden z-10 drop-shadow-2xl;
 }
 
 ::-webkit-scrollbar {
@@ -83,9 +38,107 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #ccc;
+    @apply bg-primary;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #022444;
+}
+
+
+.pulsating-circle {
+    position: absolute;
+    top: 49%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 20px;
+    height: 20px;
+
+    &:before {
+        content: "";
+        position: relative;
+        display: block;
+        width: 300%;
+        height: 300%;
+        box-sizing: border-box;
+        margin-left: -100%;
+        margin-top: -100%;
+        border-radius: 45px;
+        background-color: #1fe284;
+        animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: #1fe284;
+        border-radius: 15px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+    }
+}
+
+.pulsating-circle-danger {
+    position: absolute;
+    top: 49%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 20px;
+    height: 20px;
+
+    &:before {
+        content: "";
+        position: relative;
+        display: block;
+        width: 300%;
+        height: 300%;
+        box-sizing: border-box;
+        margin-left: -100%;
+        margin-top: -100%;
+        border-radius: 45px;
+        background-color: red;
+        animation: pulse-ring 1.25s cubic-bezier(0.215, 0.61, 0.355, 1) infinite;
+    }
+
+    &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: red;
+        border-radius: 15px;
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+        animation: pulse-dot 1.25s cubic-bezier(0.455, 0.03, 0.515, 0.955) -0.4s infinite;
+    }
+}
+
+@keyframes pulse-ring {
+    0% {
+        transform: scale(0.33);
+    }
+
+    80%,
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes pulse-dot {
+    0% {
+        transform: scale(0.8);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+    100% {
+        transform: scale(0.8);
+    }
 }
