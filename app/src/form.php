@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['token'])) {
 
     try {
         if ($recaptcha->score < 0.5) {
-            throw new Exception('Low Score');
+            throw new Exception('Sorry we could not verify you! Please try again.');
         }
 
         $to = $admin_email;
