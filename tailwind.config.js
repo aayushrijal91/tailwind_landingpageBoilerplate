@@ -9,12 +9,16 @@ module.exports = {
       colors: {
         transparent: 'transparent',
         current: 'currentColor',
-        'primary': '#5687ca',
-        'secondary': '#acce31'
+        primary: '#0094F4',
+        secondary: '#32C0EE',
+        tertiary: "#2e2e2e",
+        grey: '#636364',
+        dark: '#2F2F2F',
+        light: "#ECECEB",
       },
       fontFamily: {
-        raleway: ['Raleway', 'sans-serif'],
-        faktum: ['Faktum', 'sans-serif'],
+        articulat: ["articulat-cf", "sans-serif"],
+        "articulat-heavy": ["articulat-heavy-cf", "sans-serif"],
       }
     },
   },

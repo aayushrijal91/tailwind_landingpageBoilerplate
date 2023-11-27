@@ -7,26 +7,24 @@ img {
 }
 
 body {
-    @apply font-baukasten p-0 m-0 overflow-x-hidden;
+    @apply font-articulat p-0 m-0 overflow-x-hidden;
 }
 
 .container {
-    max-width: 1300px;
+    max-width: 1420px;
     padding-left: 8px;
     padding-right: 8px;
 }
 
-.boldBtn {
-    @apply h-[50px] md:h-[60px] inline-flex items-center justify-center bg-primary rounded-full px-6 text-white font-poppins font-medium text-lg md:text-xl;
-}
-
-.borderBtn {
-    @apply h-[50px] md:h-[60px] inline-flex items-center justify-center border-2 rounded-full px-6 font-poppins font-medium text-lg md:text-xl;
+.description {
+    p {
+        margin-bottom: 16px;
+    }
 }
 
 //Go To Top
 #return-to-top {
-    @apply bg-grey hover:bg-dark w-[50px] h-[50px] right-[55px] bottom-[95px] rounded-full transition-all duration-100 ease-linear fixed hidden z-10 drop-shadow-2xl;
+    @apply bg-grey hover:bg-dark border-2 border-white shadow-lg w-[50px] h-[50px] right-[55px] bottom-[95px] rounded-full transition-all duration-100 ease-linear fixed flex justify-center items-center z-10 drop-shadow-2xl;
 }
 
 ::-webkit-scrollbar {
