@@ -18,15 +18,25 @@ function style() {
     ];
 
     return gulp.src('./scss/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss(processors))
-    .pipe(gulp.dest('./app/assets/css'))
+        .pipe(sass().on('error', sass.logError))
+        .pipe(postcss(processors))
+        .pipe(gulp.dest('./app/assets/css'))
 }
 
 function imgSquash() {
     return gulp.src("./images/**/*")
         .pipe(imagemin())
         .pipe(gulp.dest("./app/assets/images"));
+}
+
+function slick_assets() {
+    return gulp.src('./node_modules/slick-carousel/slick/ajax-loader.gif')
+        .pipe(gulp.dest('./app/assets/css'));
+}
+
+function slick_fonts() {
+    return gulp.src('./node_modules/slick-carousel/slick/fonts/**/*')
+        .pipe(gulp.dest('./app/assets/css/fonts/'));
 }
 
 function scripts() {
@@ -43,7 +53,7 @@ function scripts() {
         .pipe(gulp.dest('./app/assets/js'));
 }
 
-function watchTask() {
+function watch() {
     browserSync.init({
         proxy: encodeURI(`localhost/landing_pages/${path.resolve(__dirname, './').split(path.sep).pop()}/app`),
         injectChanges: true,
@@ -54,4 +64,10 @@ function watchTask() {
     gulp.watch(["./app/assets/css/**/*.css", "./app/**/*.php", "./app/assets/js/**/*.js"]).on('change', browserSync.reload);;
 }
 
-exports.watch = watchTask;
+exports.watch = gulp.series(
+    gulp.parallel(
+        slick_assets,
+        slick_fonts,
+    ),
+    watch
+);
